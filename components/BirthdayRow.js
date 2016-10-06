@@ -12,10 +12,14 @@ import {
 
 export default class BirthdayRow extends React.Component {
   props: {
-    person: Person,
+    person: ?Person,
   };
 
   render() {
+    if (!this.props.person) {
+      return null;
+    }
+
     return (
       <View style={STYLES.Root}>
         <Text>

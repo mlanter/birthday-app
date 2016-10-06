@@ -11,18 +11,12 @@ import {
 import BirthdayRow from 'BirthdayRow';
 
 export default class BirthdayRowList extends React.Component {
-  props: {
-    people: Person[],
-  };
-
   render() {
+    let people = [];
     return (
       <View>
-        {this.props.people.map((person: Person, index: number) =>
-          <BirthdayRow
-            key={index + person.name}
-            person={person}
-          />
+        {people.map((person: Person) =>
+          <BirthdayRow person={person} key={person} />
         )}
       </View>
     );

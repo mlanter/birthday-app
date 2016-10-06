@@ -12,13 +12,13 @@ import {
 } from 'react-native';
 
 import AddBirthdayCard from 'AddBirthdayCard';
-import BirthdayRowList from 'BirthdayRowList';
+import BirthdayRow from 'BirthdayRow';
 
 class Birthdays extends Component {
   state: {
     people: Person[],
   } = {
-    people: [{ name: 'Sally Smith', dateOfBirth: { month: 8, day: 1, year: 2015 } }],
+    people: [],
   }
 
   _savePerson = (person: Person) => {
@@ -32,7 +32,7 @@ class Birthdays extends Component {
   render() {
     return (
       <View style={STYLES.root}>
-        <BirthdayRowList people={this.state.people} />
+        <BirthdayRow person={this.state.people[0]} />
         <AddBirthdayCard onSave={this._savePerson} />
       </View>
     );
