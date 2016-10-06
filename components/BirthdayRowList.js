@@ -15,8 +15,8 @@ export default class BirthdayRowList extends React.Component {
     let people = [];
     return (
       <View>
-        {people.map((person: Person) =>
-          <BirthdayRow person={person} key={person} />
+        {people.map((person: Person, index: number) =>
+          <BirthdayRow person={person} key={person.name + index} />
         )}
       </View>
     );
